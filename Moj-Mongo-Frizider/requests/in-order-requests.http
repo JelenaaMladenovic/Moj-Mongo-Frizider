@@ -1,0 +1,68 @@
+### Create Cuisine
+POST http://localhost:3000/Cuisine
+Content-Type: application/json
+
+{
+    "name": "Chinese",
+    "description": "Cuisine known for how its both healthy and tasty with low fats and sugars!"
+}
+
+### Update Cuisine
+PATCH http://localhost:3000/Cuisine/65c5f9c29a2510fdc96eb124
+Content-Type: application/json
+
+{
+    "description": "asfdg for how its both healthy and tasty with low fats and sugars!"
+}
+
+
+### Create Recipe
+POST http://localhost:3000/Recipe
+Content-Type: application/json
+
+{
+    "name": "Shrooms!!!!!",
+    "imageURL": "string",
+    "description": "string",
+    "category": [
+        "Low Fat",
+        "Quick"
+        ],
+    "cookingType": "string",
+    "budget": "string",
+    "ingredientIds": [
+        "65c5f9b89a2510fdc96eb121"
+        ],
+    "cuisineId": "65c5f9c29a2510fdc96eb124"
+}
+
+### Update Recipe
+PATCH http://localhost:3000/Recipe/65c62ecb6d41bd801c7bee84
+Content-Type: application/json
+
+{
+    "ingredientIds": [
+        "65c5f9b89a2510fdc96eb121",
+        "65c5f9a79a2510fdc96eb11e",
+        "65c7c49df6ee5f3661098051"
+    ]
+}
+
+### Get Recipe
+GET http://localhost:3000/Recipe/65c7948a28d9432cfc674e53
+
+### GET ALL
+GET http://localhost:3000/Recipe
+
+### Get Recipe By Ingredients
+PUT http://localhost:3000/Recipe
+Content-Type: application/json
+
+[
+   "65c5f9b89a2510fdc96eb121",
+   "65c5f9a79a2510fdc96eb11e",
+   "65c7c49df6ee5f3661098051"
+]
+
+### Get recommendations
+GET http://localhost:3000/Recipe/getrecommendations/65c62ecb6d41bd801c7bee84
